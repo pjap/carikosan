@@ -17,10 +17,12 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
+const mitra = require('./routes/mitra')
 // const user  = require('./routes/user')
 // const kosan = require('./routes/kosan')
 // const kamar = require('./routes/kamar')
 
+app.use('/mitra', mitra)
 // app.use('/user', user)
 // app.use('/kosan', kosan)
 // app.use('/kamar', kamar)
