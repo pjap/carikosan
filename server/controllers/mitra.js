@@ -20,15 +20,18 @@ class MitraClass {
     }
 
     static createMitra(req, res) {
-        // res.send(typeof req.file.cloudStoragePublicUrl)
+        // res.send(req.file.cloudStoragePublicUrl)
+        // res.send(req.body)
         var hash = bcrypt.hashSync(req.body.password, salt)
         MitraModel.create({
             username: req.body.username,
             password: hash,
+            passwordConf: hash,
+            alamat: req.body.alamat,
+            fullname:req.body.fullname,
+            kuasaKTP: req.file.cloudStoragePublicUrl,
             email: req.body.email,
-            phone: req.body.phone,
-            role: req.body.role,
-            avatar: req.file.cloudStoragePublicUrl
+            phone: req.body.phone
         })
             .then(result => {
                 res.send(result)
@@ -53,6 +56,9 @@ class MitraClass {
             { _id: req.params.id }, {
                 $set: {
                     username: req.body.username,
+                    alamat: req.body.alamat,
+                    fullname: req.body.fullname,
+                    kuasaKTP: req.file.cloudStoragePublicUrl,
                     email: req.body.email,
                     phone: req.body.phone,
                     updatedAt: new Date()
@@ -63,6 +69,23 @@ class MitraClass {
             res.send(result)
         }).catch(err => {
             console.error(err)
+            res.send(err)
+        })
+    }
+
+    static addKosanMitra(req,res){
+        MitraModel.findOneAndUpdate(
+            { _id: req.params.id },
+            {$addtoset:{listKosan:req.body.kosanId}},
+            { new: true}
+        )
+        .then( result =>{
+            res.send({
+                msg: 'sukses menambah kosan !',
+                result: result
+            })
+        })
+        .catch(err=>{
             res.send(err)
         })
     }
@@ -91,9 +114,11 @@ class MitraClass {
                         {
                             id: data._id,
                             username: data.username,
+                            alamat: data.alamat,
+                            fullname: data.fullname,
+                            kuasaKTP: data.kuasaKTP,
                             email: data.email,
-                            phone: data.phone,
-                            role: data.role
+                            phone: data.phone
                         }, process.env.USER_SECRET)
                     res.send({ userToken: token, msg: 'success login' })
                 } else {

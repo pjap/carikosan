@@ -51,7 +51,7 @@ const Multer = require('multer'),
     multer = Multer({
         storage: Multer.MemoryStorage,
         limits: {
-            fileSize: 7 * 1024 * 1024
+            fileSize: 1 * 1024 * 1024
         }
         // dest: '../images'
     })
