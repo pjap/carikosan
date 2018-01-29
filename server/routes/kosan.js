@@ -5,7 +5,8 @@ const KosanCtrl = require('../controllers/kosan')
 
 // upload image
 const imagesMulter = require('../helpers/multer-images')
-const upload = imagesMulter.multer.single('kuasaKTP')
+// const upload = imagesMulter.multer.fields([{name:'fotoKosan', maxCount:1},{name:'pengurusKTP', maxCount:1}])
+const upload = imagesMulter.multer.single('pengurusKTP')
 const GCPupload = imagesMulter.sendUploadToGCS
 
 // DEV

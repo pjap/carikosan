@@ -19,9 +19,11 @@ class Kosan {
     }
 
     static createKosan(req, res) {
+        // res.send(req.file)
         KosanModel.create({
             mitraId: req.body.mitraId,
             name: req.body.name,
+            // fotoKosan: req.file.cloudStoragePublicUrl,
             fullAddress: req.body.fullAddress,
             RT: req.body.RT,
             RW: req.body.RW,

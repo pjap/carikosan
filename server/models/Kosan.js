@@ -8,6 +8,7 @@ var kosanSchema = new Schema({
         ref: 'user'
     },
     name: { type: String, unique: true, required: true },
+    // fotoKosan: { type: String},
     fullAddress: { type: String, required: true },
     RT: { type: String, required: true},
     RW: { type: String, required: true},
