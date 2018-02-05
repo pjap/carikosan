@@ -17,9 +17,14 @@ var kosanSchema = new Schema({
     kotaDesa: { type: String, required: true },
     provinsi: { type: String, required: true },
     kodepos: { type: String, required: true },
-    pengurusNama: { type: String, required: true},
-    pengurusEmail: { type: String, required: true},
-    pengurusKTP: { type: String, required: true},
+    pengurus: {
+        type: Schema.Types.ObjectId,
+        ref:'pengurus',
+        required: true
+    },
+    // pengurusNama: { type: String, required: true},
+    // pengurusEmail: { type: String, required: true},
+    // pengurusKTP: { type: String, required: true},
     statusKepemilikan: {type:String},
     kamarList:[{
         type: Schema.Types.ObjectId,

@@ -13,10 +13,15 @@ var kamarSchema = new Schema({
     available: true,
     promo: [],
     category: [], // AC, kamar mandi dalam, kamar mandi luar, 
-    penyewaNama: {type:String},
-    penyewaKTP: {type:String},
-    checkIn: {type: Date},
-    checkOut: {type: Date},
+    penyewa: {
+        type: Schema.Types.ObjectId,
+        ref: 'penyewa',
+        required: true
+    }
+    // penyewaNama: {type:String},
+    // penyewaKTP: {type:String},
+    // checkIn: {type: Date},
+    // checkOut: {type: Date},
 }, { timestamps: true })
 
 var kamar = mongoose.model('kamar', kamarSchema);
