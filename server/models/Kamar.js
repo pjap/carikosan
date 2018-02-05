@@ -15,8 +15,8 @@ var kamarSchema = new Schema({
     category: [], // AC, kamar mandi dalam, kamar mandi luar, 
     penyewaNama: {type:String},
     penyewaKTP: {type:String},
-    checkIn: {type: String},
-    checkOut: {type: String},
+    checkIn: {type: Date},
+    checkOut: {type: Date},
 }, { timestamps: true })
 
 var kamar = mongoose.model('kamar', kamarSchema);

@@ -21,11 +21,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 const mitra = require('./routes/mitra')
 const kosan = require('./routes/kosan')
 // const kamar = require('./routes/kamar')
+const kosBayar = require('./routes/kosBayar')
 
 app.use('/mitra', mitra)
 // app.use('/user', user)
 app.use('/kosan', kosan)
 // app.use('/kamar', kamar)
+app.use('/kosBayar', kosBayar)
 
 app.listen(3000,(err)=>{ 
     if (err) console.log('ERROR PORT 3000')
