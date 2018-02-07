@@ -18,7 +18,8 @@ var kosTransactionSchema = new Schema({
         ref: 'kosan',
         required: true
     },
-    bulan: {type: Number, required:true, min:1, max: 12},
+    bulan: {type: Number, required: true, min:1, max: 12},
+    tahun: {type: Number, required: true, min:2018}
 },{timestamps:true})
 
 var kosTransaction = mongoose.model('kosTransaction', kosTransactionSchema)
