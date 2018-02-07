@@ -18,7 +18,7 @@ class KosTransaction {
     }
 
     static create(req, res) {
-        KosTransaction.create(req.body)
+        KosTransactionModel.create(req.body)
         .then( result => {
             res.send(result)
         })

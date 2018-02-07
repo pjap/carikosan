@@ -1,8 +1,8 @@
-console.log('models BARANG KOSAN')
+console.log('models BARANG KOSAN \n')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-var barangKamarSchema = new Schema({
+var barangKosanSchema = new Schema({
     kosanId:{
         type: Schema.Types.ObjectId,
         ref: 'kosan',
@@ -13,6 +13,6 @@ var barangKamarSchema = new Schema({
     tanggalBuang:{type:Date}
 }, {timestamps:true})
 
-var barangKamarModel = mongoose.model('BarangKamar', barangKamarSchema)
+var barangKosanModel = mongoose.model('barangKosan', barangKosanSchema)
 
-module.exports = barangKamarModel
+module.exports = barangKosanModel

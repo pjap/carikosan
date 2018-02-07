@@ -24,12 +24,18 @@ const mitra = require('./routes/mitra')
 const kosan = require('./routes/kosan')
 // const kamar = require('./routes/kamar')
 const kosTransaction = require('./routes/kosTransaction')
+const kosHarian = require('./routes/kosHarian')
+const barangKamar = require('./routes/barangKamar')
+const barangKosan = require('./routes/barangKosan')
 
 app.use('/mitra', mitra)
 // app.use('/user', user)
 app.use('/kosan', kosan)
 // app.use('/kamar', kamar)
 app.use('/kosTransaction', kosTransaction)
+app.use('/kosHarian', kosHarian)
+app.use('/barangKamar', barangKamar)
+app.use('/barangKosan', barangKosan)
 
 
 var port = process.env.PORT || 3000

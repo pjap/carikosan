@@ -1,4 +1,4 @@
-console.log('models BARANG KAMAR')
+console.log('models BARANG KAMAR \n')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
@@ -10,6 +10,6 @@ var barangKamarSchema = new Schema({
     },
 },{timestamps:true})
 
-var barangKamarModel = mongoose.model('BarangKamar', barangKamarSchema)
+var barangKamarModel = mongoose.model('barangKamar', barangKamarSchema)
 
 module.exports = barangKamarModel
