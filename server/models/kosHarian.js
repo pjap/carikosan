@@ -19,7 +19,8 @@ var kosHarianSchema = new Schema({
         requried: true
     },
     harga:{type: Number, required:true},
-    tanggal:{type:Date,required:true}
+    tanggalBayar:{type:Date,required:true},
+    JenisBayar:{type:String, default:'cash'}
 },{timestamps:true})
 
 var kosHarianModel = mongoose.model('KosHarian', kosHarianSchema)
