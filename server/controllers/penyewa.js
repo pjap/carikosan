@@ -1,14 +1,13 @@
-console.log('controllers MAINTENANCE KOSAN')
-const MaintenanceKosanModel = require('../models/MaintenanceKosan')
+console.log('controllers PENYEWA\n')
+const PenyewaModel = require('../models/Penyewa')
 
-
-class MaintenanceKosan {
+class Penyewa {
     constructor() {
 
     }
 
     static getAll(req, res) {
-        MaintenanceKosanModel.find({})
+        PenyewaModel.find({})
             .then(result => {
                 res.send(result)
             })
@@ -19,7 +18,7 @@ class MaintenanceKosan {
     }
 
     static create(req, res) {
-        MaintenanceKosanModel.create(req.body)
+        PenyewaModel.create(req.body)
             .then(result => {
                 res.send(result)
             })
@@ -29,8 +28,8 @@ class MaintenanceKosan {
     }
 
     static singleId(req, res) {
-        MaintenanceKosanModel
-            .findById({ _id: req.params.maintenanceKosanId })
+        PenyewaModel
+            .findById({ _id: req.params.penyewaId })
             .then(result => {
                 res.send(result)
             })
@@ -40,9 +39,9 @@ class MaintenanceKosan {
     }
 
     static update(req, res) {
-        MaintenanceKosanModel
+        PenyewaModel
             .findOneAndUpdate(
-            { _id: req.params.maintenanceKosanId },
+            { _id: req.params.penyewaId },
             req.body,
             { new: true }
             )
@@ -55,9 +54,9 @@ class MaintenanceKosan {
     }
 
     static delete(req, res) {
-        MaintenanceKosanModel
+        PenyewaModel
             .findByIdAndRemove(
-            { _id: req.params.maintenanceKosanId  }
+            { _id: req.params.penyewaId }
             )
             .then(result => {
                 res.send(result)
@@ -66,6 +65,8 @@ class MaintenanceKosan {
                 res.send(err)
             })
     }
+
 }
 
-module.exports = MaintenanceKosan
+
+module.exports = Penyewa

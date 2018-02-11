@@ -1,4 +1,4 @@
-console.log('controller MAINTENANCE KOSAN')
+console.log('controller MAINTENANCE KOSAN\n')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 

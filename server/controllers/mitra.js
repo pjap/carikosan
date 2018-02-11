@@ -1,3 +1,4 @@
+console.log('controllers MITRA')
 const MitraModel = require('../models/Mitra')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')

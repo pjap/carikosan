@@ -1,5 +1,5 @@
 console.log('controllers KOS HARIAN')
-const kosHarianModel = require('../models/kosHarian')
+const KosHarianModel = require('../models/KosHarian')
 
 class KosHarian {
     constructor() {
@@ -7,7 +7,7 @@ class KosHarian {
     }
 
     static getAll(req, res) {
-        kosHarianModel.find({})
+        KosHarianModel.find({})
             .then(result => {
                 res.send(result)
             })
@@ -18,7 +18,7 @@ class KosHarian {
     }
 
     static create(req, res) {
-        kosHarianModel.create(req.body)
+        KosHarianModel.create(req.body)
             .then(result => {
                 res.send(result)
             })
@@ -28,7 +28,7 @@ class KosHarian {
     }
 
     static singleId(req, res) {
-        kosHarianModel
+        KosHarianModel
             .findById({ _id: req.params.kosHarianId })
             .then(result => {
                 res.send(result)
@@ -39,7 +39,7 @@ class KosHarian {
     }
 
     static update(req, res) {
-        kosHarianModel
+        KosHarianModel
             .findOneAndUpdate(
             { _id: req.params.kosHarianId },
             req.body,
@@ -54,7 +54,7 @@ class KosHarian {
     }
 
     static delete(req, res) {
-        kosHarianModel
+        KosHarianModel
             .findByIdAndRemove(
             { _id: req.params.kosHarianId }
             )

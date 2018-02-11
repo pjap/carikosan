@@ -1,4 +1,4 @@
-console.log('controllers KOS TRANSACTION')
+console.log('controllers KOS TRANSACTION\n')
 const KosTransactionModel = require('../models/KosTransaction')
 
 class KosTransaction {

@@ -1,5 +1,5 @@
 console.log('controllers MAINTANANCE KAMAR')
-const maintenanceKamarModel = require('../models/maintenanceKamar')
+const MaintenanceKamarModel = require('../models/MaintenanceKamar')
 
 class MaintenanceKamar {
     constructor() {
@@ -7,7 +7,7 @@ class MaintenanceKamar {
     }
 
     static getAll(req, res) {
-        maintenanceKamarModel.find({})
+        MaintenanceKamarModel.find({})
             .then(result => {
                 res.send(result)
             })
@@ -18,7 +18,7 @@ class MaintenanceKamar {
     }
 
     static create(req, res) {
-        maintenanceKamarModel.create(req.body)
+        MaintenanceKamarModel.create(req.body)
             .then(result => {
                 res.send(result)
             })
@@ -28,7 +28,7 @@ class MaintenanceKamar {
     }
 
     static singleId(req, res) {
-        maintenanceKamarModel
+        MaintenanceKamarModel
             .findById({ _id: req.params.maintenanceKamarId })
             .then(result => {
                 res.send(result)
@@ -39,7 +39,7 @@ class MaintenanceKamar {
     }
 
     static update(req, res) {
-        maintenanceKamarModel
+        MaintenanceKamarModel
             .findOneAndUpdate(
             { _id: req.params.maintenanceKamarId },
             req.body,
@@ -54,7 +54,7 @@ class MaintenanceKamar {
     }
 
     static delete(req, res) {
-        maintenanceKamarModel
+        MaintenanceKamarModel
             .findByIdAndRemove(
             { _id: req.params.maintenanceKamarId }
             )

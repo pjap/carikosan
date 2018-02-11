@@ -1,3 +1,4 @@
+console.log('model KOSAN')
 const KosanModel = require('../models/Kosan')
 const redis = require('redis');
 

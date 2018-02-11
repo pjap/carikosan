@@ -1,3 +1,4 @@
+console.log('models KAMAR\n')
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -10,7 +11,7 @@ var kamarSchema = new Schema({
     fotoKamar: { type: String },
     luas: { type: String},
     price: { type: Number, required: true },
-    available: true,
+    available: {type:Boolean, default:true},
     promo: [],
     category: [], // AC, kamar mandi dalam, kamar mandi luar, 
     penyewa: {

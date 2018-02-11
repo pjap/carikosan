@@ -1,3 +1,4 @@
+console.log('controllers KAMAR')
 const KamarModel = require('../models/Kamar')
 const redis = require('redis')
 require('dotenv').config()
@@ -71,44 +72,44 @@ class KamarClass {
     }
 
     static sewaKamar(req,res) {
-        KamarModel.findOneAndUpdate(
-            {_id:req.params.kamarId},
-            { 
-                $set: {
-                    penyewaNama: req.body.penyewaNama,
-                    penyewaKTP: req.file.cloudStoragePublicUrl,
-                    checkIn: req.body.checkIn,
-                    checkout: req.body.checkOut,
-                    available:false
-                }
-            },
-            {new:true}
-        )
-        .then(result =>{
-            res.send({
-                msg:'isian data penyewa kamar berhasil',
-                result:result
-            })
-        })
-        .catch(err=>{
-            res.send(err)
-        })
+        // KamarModel.findOneAndUpdate(
+        //     {_id:req.params.kamarId},
+        //     { 
+        //         $set: {
+        //             penyewaNama: req.body.penyewaNama,
+        //             penyewaKTP: req.file.cloudStoragePublicUrl,
+        //             checkIn: req.body.checkIn,
+        //             checkout: req.body.checkOut,
+        //             available:false
+        //         }
+        //     },
+        //     {new:true}
+        // )
+        // .then(result =>{
+        //     res.send({
+        //         msg:'isian data penyewa kamar berhasil',
+        //         result:result
+        //     })
+        // })
+        // .catch(err=>{
+        //     res.send(err)
+        // })
     }
 
     static kosongKamar(req,res){
-        KamarModel.findOneAndUpdate(
-            {_id:req.params.kamarId},
-            {
-                $set:{
-                    penyewaNama: null,
-                    penyewaKTP: null,
-                    checkIn: null,
-                    checkout: null,
-                    available: true 
-                }
-            }
+        // KamarModel.findOneAndUpdate(
+        //     {_id:req.params.kamarId},
+        //     {
+        //         $set:{
+        //             penyewaNama: null,
+        //             penyewaKTP: null,
+        //             checkIn: null,
+        //             checkout: null,
+        //             available: true 
+        //         }
+        //     }
         
-        )
+        // )
     }
 
     static deleteKamar(req, res) {

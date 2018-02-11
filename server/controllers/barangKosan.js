@@ -1,5 +1,5 @@
 console.log('controllers BARANG KOSAN')
-const barangKosanModel = require('../models/barangKosan')
+const BarangKosanModel = require('../models/BarangKosan')
 
 class BarangKosan {
     constructor() {
@@ -7,7 +7,7 @@ class BarangKosan {
     }
 
     static getAll(req, res) {
-        barangKosanModel.find({})
+        BarangKosanModel.find({})
             .then(result => {
                 res.send(result)
             })
@@ -18,7 +18,7 @@ class BarangKosan {
     }
 
     static create(req, res) {
-        barangKosanModel.create(req.body)
+        BarangKosanModel.create(req.body)
             .then(result => {
                 res.send(result)
             })
@@ -28,7 +28,7 @@ class BarangKosan {
     }
 
     static singleId(req, res) {
-        barangKosanModel
+        BarangKosanModel
             .findById({ _id: req.params.barangKosanId })
             .then(result => {
                 res.send(result)
@@ -39,7 +39,7 @@ class BarangKosan {
     }
 
     static update(req, res) {
-        barangKosanModel
+        BarangKosanModel
             .findOneAndUpdate(
             { _id: req.params.barangKosanId },
             req.body,
@@ -54,7 +54,7 @@ class BarangKosan {
     }
 
     static delete(req, res) {
-        barangKosanModel
+        BarangKosanModel
             .findByIdAndRemove(
             { _id: req.params.barangKosanId }
             )
