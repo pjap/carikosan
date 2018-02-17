@@ -16,7 +16,7 @@ router.get('/', MitraCtrl.findAllMitra)
 // router.get('/', jwt.isLogin, jwt.isAdmin, MitraCtrl.findAllMitra)
 router.post('/', upload, GCPupload, MitraCtrl.createMitra) //register
 router.get('/:id', MitraCtrl.findOneMitra)
-router.put('/:id', upload, GCPupload,MitraCtrl.updateMitra)
+router.put('/:id', upload, GCPupload, MitraCtrl.updateMitra)
 router.patch('/addkosan/:id', MitraCtrl.addKosanMitra)
 router.delete('/:id', MitraCtrl.deleteMitra)
 

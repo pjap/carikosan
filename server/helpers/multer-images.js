@@ -1,6 +1,5 @@
 'use strict'
 require('dotenv').config()
-
 const Storage = require('@google-cloud/storage')
 
 const CLOUD_BUCKET = process.env.CLOUD_BUCKET
@@ -11,6 +10,10 @@ const storage = Storage({
 })
 const bucket = storage.bucket(CLOUD_BUCKET)
 
+//------------------ END OF CLOUD STORAGE CONFIGURATION -----------------------------//
+//------------------ START OF CLOUD STORAGE CONFIGURATION -----------------------------//
+
+
 const getPublicUrl = (filename) => {
     return `https://storage.googleapis.com/${CLOUD_BUCKET}/${filename}`
 }
@@ -19,7 +22,8 @@ const sendUploadToGCS = (req, res, next) => {
     if (!req.file) {
         return next()
     }
-    const gcsname = Date.now() + req.file.originalname
+    // const gcsname = Date.now() + req.file.originalname
+    const gcsname = req.file.originalname
     const file = bucket.file(gcsname)
 
     const stream = file.createWriteStream({
@@ -43,7 +47,6 @@ const sendUploadToGCS = (req, res, next) => {
             next()
         })
     })
-
     stream.end(req.file.buffer)
 }
 

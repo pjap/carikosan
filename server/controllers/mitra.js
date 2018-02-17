@@ -53,6 +53,7 @@ class MitraClass {
     }
 
     static updateMitra(req, res) {
+        // res.send('ok')
         MitraModel.findOneAndUpdate(
             { _id: req.params.id }, {
                 $set: {
